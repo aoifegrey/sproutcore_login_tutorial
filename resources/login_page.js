@@ -6,6 +6,7 @@
 
 LoginTutorial.loginPage = SC.Page.design({
     mainPane: SC.MainPane.design({
+        defaultResponder: 'LoginTutorial.statechart',
         childViews: 'form'.w(),
         form: SC.View.design({
             layout: {width: 200, height: 160, centerX: 0, centerY: 0},
