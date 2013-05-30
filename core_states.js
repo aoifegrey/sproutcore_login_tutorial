@@ -18,7 +18,12 @@ LoginTutorial.statechart = SC.Statechart.create({
                 var userName = LoginTutorial.getPath('loginController.userName');
                 var password = LoginTutorial.getPath('loginController.password');
                 
-                if(!SC.empty(userName) && !SC.empty(password)){
+                SC.Request.postUrl('/login', {user_name: userName, password: password}).
+                        notify(this, 'didCompleteAuthentication').json().send();
+            },
+            
+            didCompleteAuthentication: function(response){
+                if(!SC.ok(response)) {
                     this.gotoState('loggedIn');
                 }else{
                     SC.AlertPane.error("Login information incorrect!");

@@ -12,3 +12,4 @@
 
 # It is better to add :required targets here than in the global Buildfile.
 config :all, :required => [:sproutcore, 'sproutcore/statechart']
+proxy '/login', :to => 'localhost:4567'
