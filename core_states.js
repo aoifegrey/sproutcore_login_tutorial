@@ -11,9 +11,11 @@ LoginTutorial.statechart = SC.Statechart.create({
             enterState: function() {
                 LoginTutorial.getPath('loginPage.mainPane').append();
             },
+                    
             exitState: function() {
                 LoginTutorial.getPath('loginPage.mainPane').remove();
             },
+                    
             authenticate: function(){
                 var userName = LoginTutorial.getPath('loginController.userName');
                 var password = LoginTutorial.getPath('loginController.password');
